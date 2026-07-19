@@ -1,0 +1,796 @@
+.reading-page {
+
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+
+  padding: 60px;
+
+  background: #f8f5f0;
+
+}
+
+
+.reading-card {
+
+  max-width: 800px;
+
+  width: 100%;
+
+  background: white;
+
+  padding: 50px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+.reading-card h1 {
+
+  text-align: center;
+
+  color: #0f766e;
+
+  font-size: 42px;
+
+  margin-bottom: 15px;
+
+}
+
+
+.reading-card h3 {
+
+  text-align: center;
+
+  color: #666;
+
+  margin-bottom: 40px;
+
+}
+
+
+.reading-card p {
+
+  font-size: 20px;
+
+  line-height: 2;
+
+  color: #333;
+
+  margin-bottom: 40px;
+
+}
+
+
+.reading-card button {
+
+  display: block;
+
+  margin: auto;
+
+  padding: 14px 35px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #0f766e;
+
+  color: white;
+
+  font-size: 16px;
+
+}
+.reading-page {
+
+  min-height: 90vh;
+
+  background: #f8f5f0;
+
+  padding: 40px 20px;
+
+}
+
+
+.reading-container {
+
+  max-width: 850px;
+
+  margin: auto;
+
+  background: white;
+
+  padding: 50px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+
+.reading-container h1 {
+
+  text-align: center;
+
+  color: #0f766e;
+
+}
+
+
+.reading-container {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  width: 100%;
+}
+
+
+.chapter-text{
+
+    direction:rtl;
+
+    text-align:justify;
+
+    font-size:26px;
+
+    line-height:2.5;
+
+    color:#1f2937;
+
+    letter-spacing:.3px;
+
+}
+
+.chapter-text p{
+
+    margin-bottom:28px;
+
+}
+
+
+.chapter-buttons {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 40px;
+
+}
+
+
+.chapter-buttons button {
+
+  padding: 12px 30px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #0f766e;
+
+  color: white;
+
+  cursor: pointer;
+
+}
+.chapter-header {
+
+  text-align: center;
+
+  margin-bottom: 30px;
+
+}
+
+.chapter-header h3 {
+
+  color: #0f766e;
+
+  font-size: 28px;
+
+  margin-bottom: 8px;
+
+}
+
+.chapter-header p {
+
+  color: #777;
+
+  font-size: 16px;
+
+}
+.reading-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 40px auto;
+  align-items: start;
+}
+
+.chapter-sidebar {
+
+  width: 250px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  position: sticky;
+
+  top: 20px;
+
+}
+
+.chapter-sidebar h3 {
+
+  color: #0f766e;
+
+  margin-bottom: 20px;
+
+}
+
+.chapter-sidebar button {
+
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f3f4f6;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.chapter-sidebar button:hover {
+
+  background: #0f766e;
+
+  color: white;
+
+}
+
+.active-chapter {
+
+  background: #0f766e !important;
+
+  color: white;
+
+}
+
+.reading-container {
+
+  flex: 1;
+
+}
+.book-header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.book-header h1{
+
+    color:#0f766e;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.writer-name{
+
+    color:#777;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+}
+
+.divider{
+
+    border:none;
+
+    border-top:2px solid #e5e7eb;
+
+    margin:30px 0;
+
+}
+
+.chapter-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.chapter-header h2{
+
+    font-size:30px;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.chapter-header span{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+}
+.reader-toolbar{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+
+}
+
+.reader-toolbar button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.reader-toolbar button:hover{
+
+    background:#0f766e;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+.dark{
+
+    background:#111827;
+
+    transition:.4s;
+
+}
+
+.dark .reading-container{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+.dark .chapter-text{
+
+    color:#f3f4f6;
+
+}
+
+.dark .chapter-sidebar{
+
+    background:#1f2937;
+
+}
+
+.dark .chapter-sidebar h3{
+
+    color:#ffffff;
+
+}
+
+.dark .chapter-sidebar button{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark .reader-toolbar button{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+.dark .book-header h1{
+
+    color:#34d399;
+
+}
+
+.dark .writer-name{
+
+    color:#d1d5db;
+
+}
+
+.dark .divider{
+
+    border-top:2px solid #374151;
+
+}
+
+.dark .chapter-header h2{
+
+    color:white;
+
+}
+
+.dark .chapter-header span{
+
+    color:#d1d5db;
+
+}
+.progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:#d1d5db;
+
+    z-index:999;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    background:#0f766e;
+
+    transition:width .1s linear;
+
+}
+
+.dark .progress-bar{
+
+    background:#374151;
+
+}
+
+.dark .progress-fill{
+
+    background:#34d399;
+
+}
+.settings-btn{
+
+    background:#0f766e !important;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+}
+
+.settings-panel{
+
+    width:320px;
+
+    margin:20px auto 40px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+.settings-panel button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.settings-panel button:hover{
+
+    background:#0f766e;
+
+    color:white;
+
+}
+
+.dark .settings-panel{
+
+    background:#1f2937;
+
+}
+
+.dark .settings-panel button{
+
+    background:#374151;
+
+    color:white;
+
+}
+.chapter-ending{
+
+    margin-top:70px;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:#f9fafb;
+
+    border-radius:20px;
+
+}
+
+
+.ending-line{
+
+    width:80px;
+
+    height:3px;
+
+    background:#0f766e;
+
+    margin:0 auto 25px;
+
+}
+
+
+.chapter-ending h3{
+
+    font-size:24px;
+
+    color:#0f766e;
+
+}
+
+
+.chapter-ending p{
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+
+}
+
+
+.chapter-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+.chapter-buttons button{
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#0f766e;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.chapter-buttons button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+.chapter-buttons button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+
+.dark .chapter-ending{
+
+    background:#111827;
+
+}
+
+
+.dark .chapter-ending h3{
+
+    color:#34d399;
+
+}
+
+
+.dark .chapter-ending p{
+
+    color:#d1d5db;
+
+}
+/* Mobile Responsive */
+
+@media (max-width: 768px){
+
+    .reading-page{
+        width:100%;
+        overflow-x:hidden;
+    }
+
+
+    .reading-layout{
+        display:flex;
+        flex-direction:column;
+        padding:10px;
+        width:100%;
+    }
+
+
+    .chapter-sidebar{
+
+        width:100%;
+        padding:15px;
+        border-radius:15px;
+
+    }
+
+
+    .chapter-sidebar button{
+
+        display:inline-block;
+        width:32%;
+        margin:2px;
+        padding:10px 5px;
+        font-size:12px;
+
+    }
+
+
+    .reading-container{
+
+        width:100%;
+        padding:20px 15px;
+    }
+
+
+    .book-header h1{
+
+        font-size:26px;
+        text-align:center;
+
+    }
+
+
+    .writer-name{
+
+        text-align:center;
+
+    }
+
+
+    .reader-toolbar button{
+
+        width:100%;
+    }
+
+
+    .settings-panel{
+
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+
+    }
+
+
+    .chapter-header{
+
+        text-align:center;
+        margin-top:25px;
+
+    }
+
+
+    .chapter-text{
+
+        width:100%;
+        font-size:20px !important;
+        line-height:2;
+        text-align:right;
+    }
+
+
+    .chapter-ending{
+
+        margin-top:40px;
+        padding:25px 15px;
+
+    }
+
+
+    .chapter-buttons button{
+
+        width:100%;
+
+    }
+
+}

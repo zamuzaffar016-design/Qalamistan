@@ -1,0 +1,135 @@
+.explore-page {
+
+  background: #f8f5f0;
+
+  min-height: 80vh;
+
+}
+
+
+.explore-header {
+
+  text-align: center;
+
+  padding: 70px 20px 30px;
+
+}
+
+
+.explore-header h1 {
+
+  font-size: 45px;
+
+  color: #0f766e;
+
+  margin-bottom: 15px;
+
+}
+
+
+.explore-header p {
+
+  font-size: 20px;
+
+  color: #666;
+
+}
+@media (max-width:768px){
+
+    .explore-page{
+
+        padding:20px 10px;
+
+    }
+
+
+    .explore-header{
+
+        text-align:center;
+
+    }
+
+
+    .explore-header h1{
+
+        font-size:32px;
+
+    }
+
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+
+    .search-box input{
+
+        width:100%;
+
+        padding:14px;
+
+        font-size:16px;
+
+    }
+
+
+    .category-buttons{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+
+    }
+
+
+    .category-buttons button{
+
+        padding:10px 15px;
+
+        font-size:13px;
+
+    }
+
+
+    .explore-books{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+        padding:15px;
+
+    }
+
+
+    .explore-card{
+
+        width:100%;
+
+    }
+
+
+    .explore-card img{
+
+        width:100%;
+
+        height:360px;
+
+        object-fit:cover;
+
+    }
+
+
+    .explore-card button{
+
+        width:100%;
+
+    }
+
+}

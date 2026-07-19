@@ -1,0 +1,103 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+nav h2 {
+  color: #0f766e;
+  font-size: 30px;
+}
+
+nav div:nth-child(2) {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #333;
+  font-size: 16px;
+}
+
+nav button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #0f766e;
+  color: white;
+  margin-left: 10px;
+}
+.login-btn {
+
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: #0f766e;
+  border: 2px solid #0f766e;
+
+}
+
+
+.writer-btn {
+
+  padding: 10px 22px;
+  border-radius: 25px;
+  background: #0f766e;
+  color: white;
+
+}
+@media (max-width:768px){
+
+    .navbar{
+
+        padding:15px 20px;
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+
+    .nav-links{
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        gap:15px;
+
+    }
+
+
+    .nav-links a{
+
+        font-size:14px;
+
+    }
+
+
+    .nav-buttons{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+
+    .logo{
+
+        text-align:center;
+
+        width:100%;
+
+    }
+
+}
