@@ -1,59 +1,26 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import {
   collection,
   getDocs,
   query,
   where,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
-
 import { db, auth } from "../firebase/firebase";
 
 import "../styling/dashboard.css";
 
 function MyStories() {
   const [stories, setStories] = useState([]);
-  const handleDelete = async (id) => {
-
-  const confirmDelete = window.confirm(
-    "Are you sure you want to delete this story?"
-  );
-
-  if (!confirmDelete) return;
-
-  try {
-
-    await deleteDoc(doc(db, "stories", id));
-
-    setStories(
-      stories.filter((story) => story.id !== id)
-    );
-
-    alert("🗑 Story deleted successfully!");
-
-  } catch (error) {
-
-    alert(error.message);
-
-  }
-
-};
 
   useEffect(() => {
     const fetchStories = async () => {
       try {
-        const user = auth.currentUser;
-
-        if (!user) {
-          return;
-        }
+        if (!auth.currentUser) return;
 
         const q = query(
           collection(db, "stories"),
-          where("writerId", "==", user.uid)
+          where("writerId", "==", auth.currentUser.uid)
         );
 
         const snapshot = await getDocs(q);
@@ -85,21 +52,25 @@ function MyStories() {
               <div className="stat-card" key={story.id}>
                 <h2>{story.title}</h2>
 
-                <p>Category: {story.category}</p>
+                <p>
+                  <strong>Category:</strong> {story.category}
+                </p>
 
-                <p>Language: {story.language}</p>
+                <p>
+                  <strong>Language:</strong> {story.language}
+                </p>
 
-                <Link to={`/edit-story/${story.id}`}>
-  <button>
-    ✏ Edit
-  </button>
-</Link>
+                <div className="story-actions">
+                  <Link to={`/edit-story/${story.id}`}>
+                    <button>Edit</button>
+                  </Link>
 
-               <button
-  onClick={() => handleDelete(story.id)}
->
-  🗑 Delete
-</button>
+                  <Link to={`/add-chapter/${story.id}`}>
+                    <button>Add Chapter</button>
+                  </Link>
+
+                  <button>Delete</button>
+                </div>
               </div>
             ))}
           </div>

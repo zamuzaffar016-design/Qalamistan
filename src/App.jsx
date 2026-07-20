@@ -15,6 +15,8 @@ import WriterDashboard from "./views/WriterDashboard";
 import CreateStory from "./views/CreateStory";
 import MyStories from "./views/MyStories";
 import EditStory from "./views/EditStory";
+import AddChapter from "./views/AddChapter";
+import ChapterReader from "./views/ChapterReader";
 
 function App() {
 
@@ -85,6 +87,15 @@ function App() {
           path="/edit-story/:id"
           element={<EditStory />}
         />
+        <Route
+  path="/add-chapter/:storyId"
+  element={<AddChapter />}
+/>
+
+<Route
+  path="/chapter/:storyId/:chapterId"
+  element={<ChapterReader />}
+/>
 
       </Routes>
 
