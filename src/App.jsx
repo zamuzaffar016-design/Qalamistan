@@ -17,6 +17,8 @@ import MyStories from "./views/MyStories";
 import EditStory from "./views/EditStory";
 import AddChapter from "./views/AddChapter";
 import ChapterReader from "./views/ChapterReader";
+import StoryChapters from "./views/StoryChapters";
+
 
 function App() {
 
@@ -95,6 +97,10 @@ function App() {
 <Route
   path="/chapter/:storyId/:chapterId"
   element={<ChapterReader />}
+/>
+<Route
+  path="/story-chapters/:storyId"
+  element={<StoryChapters />}
 />
 
       </Routes>

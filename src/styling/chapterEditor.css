@@ -1,0 +1,141 @@
+.chapter-editor-page {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f5f1ea;
+}
+
+
+.chapter-editor-card {
+
+  max-width: 900px;
+  margin: auto;
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+}
+
+
+.chapter-editor-card h1 {
+
+  text-align: center;
+
+  font-size: 32px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.chapter-editor-card label {
+
+  display: block;
+
+  margin-top: 20px;
+
+  font-weight: 600;
+
+}
+
+
+
+.chapter-editor-card input,
+.chapter-editor-card textarea {
+
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #ddd;
+
+  font-size: 16px;
+
+}
+
+
+
+.chapter-writing-area {
+
+  min-height: 400px;
+
+  resize: vertical;
+
+  line-height: 1.8;
+
+  font-size: 18px !important;
+
+}
+
+
+
+.writing-stats {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 15px;
+
+  color: #666;
+
+}
+
+
+
+.story-actions {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 30px;
+
+}
+
+
+
+.draft-btn,
+.publish-btn {
+
+  padding: 14px 25px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+}
+
+
+.draft-btn {
+
+  background: #ddd;
+
+}
+
+
+.publish-btn {
+
+  background: #5b2c83;
+
+  color: white;
+
+}
+
+
+.publish-btn:hover {
+
+  opacity: 0.85;
+
+}

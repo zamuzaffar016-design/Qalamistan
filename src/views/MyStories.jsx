@@ -68,6 +68,9 @@ function MyStories() {
                   <Link to={`/add-chapter/${story.id}`}>
                     <button>Add Chapter</button>
                   </Link>
+                  <Link to={`/story-chapters/${story.id}`}>
+  <button>View Chapters</button>
+</Link>
 
                   <button>Delete</button>
                 </div>
