@@ -45,56 +45,126 @@ function StoryChapters() {
     fetchChapters();
   }, [storyId]);
 
-  return (
-    <div className="dashboard-page">
+ return (
+  <div className="dashboard-page">
 
-      <main className="dashboard-content">
+    <main className="dashboard-content">
 
-        <h1>📚 Story Chapters</h1>
+      <h1>📚 Story Chapters</h1>
 
-        <Link to={`/add-chapter/${storyId}`}>
-          <button className="publish-btn">
-            ➕ Add New Chapter
-          </button>
-        </Link>
 
-        <br />
-        <br />
+      <Link to={`/add-chapter/${storyId}`}>
 
-        <div className="stories-grid">
+        <button className="publish-btn">
 
-          {chapters.length === 0 ? (
-            <p>No chapters published yet.</p>
-          ) : (
-            chapters.map((chapter) => (
-              <div className="stat-card" key={chapter.id}>
+          ➕ Add New Chapter
 
-                <h2>
-                  Chapter {chapter.chapterNumber}
-                </h2>
+        </button>
 
-                <h3>{chapter.chapterTitle}</h3>
+      </Link>
 
-                <Link
-                  to={`/chapter/${chapter.id}`}
-                >
-                  <button className="read-chapter-btn">
 
-  📖 Read Chapter
 
-</button>
-                </Link>
+      <br />
+      <br />
+
+
+
+      <div className="stories-grid">
+
+
+        {chapters.length === 0 ? (
+
+          <p>No chapters published yet.</p>
+
+        ) : (
+
+
+          chapters.map((chapter) => (
+
+
+            <div 
+              className="chapter-card"
+              key={chapter.id}
+            >
+
+
+              <div className="chapter-number">
+
+
+                CHAPTER {String(chapter.chapterNumber).padStart(2,"0")}
+
 
               </div>
-            ))
-          )}
 
-        </div>
 
-      </main>
 
-    </div>
-  );
+              <h2>
+
+                {chapter.chapterTitle}
+
+              </h2>
+
+
+
+              <div className="chapter-details">
+
+
+                <span>
+
+                  ✍ {chapter.words || 0} words
+
+                </span>
+
+
+
+                <span>
+
+                  ⏱ {Math.ceil((chapter.words || 0) / 200)} min read
+
+                </span>
+
+
+              </div>
+
+
+
+
+              <Link
+
+                to={`/chapter/${chapter.id}`}
+
+              >
+
+
+                <button className="read-chapter-btn">
+
+
+                  📖 Read Chapter →
+
+                </button>
+
+
+              </Link>
+
+
+
+            </div>
+
+
+          ))
+
+        )}
+
+
+      </div>
+
+
+    </main>
+
+
+  </div>
+);
 }
 
 export default StoryChapters;

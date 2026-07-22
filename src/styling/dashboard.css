@@ -193,3 +193,76 @@
   0 12px 25px rgba(91,44,131,0.45);
 
 }
+.chapter-card {
+
+  background:white;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+  transition:0.3s;
+
+}
+
+
+
+.chapter-card:hover {
+
+  transform:translateY(-8px);
+
+}
+
+
+
+.chapter-number {
+
+  display:inline-block;
+
+  background:#5b2c83;
+
+  color:white;
+
+  padding:8px 15px;
+
+  border-radius:20px;
+
+  font-size:13px;
+
+  font-weight:bold;
+
+}
+
+
+
+.chapter-card h2 {
+
+  margin-top:20px;
+
+  font-size:24px;
+
+}
+
+
+
+.chapter-details {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin:20px 0;
+
+  color:#777;
+
+}
+
+
+
+.read-chapter-btn {
+
+  width:100%;
+
+}
