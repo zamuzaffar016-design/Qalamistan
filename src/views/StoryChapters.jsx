@@ -76,7 +76,7 @@ function StoryChapters() {
                 <h3>{chapter.chapterTitle}</h3>
 
                 <Link
-                  to={`/chapter/${storyId}/${chapter.id}`}
+                  to={`/chapter/${chapter.id}`}
                 >
                   <button>
                     📖 Read Chapter

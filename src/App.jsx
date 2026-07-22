@@ -102,6 +102,10 @@ function App() {
   path="/story-chapters/:storyId"
   element={<StoryChapters />}
 />
+<Route
+  path="/chapter/:chapterId"
+  element={<ChapterReader />}
+/>
 
       </Routes>
 
