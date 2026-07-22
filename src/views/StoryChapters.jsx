@@ -78,9 +78,11 @@ function StoryChapters() {
                 <Link
                   to={`/chapter/${chapter.id}`}
                 >
-                  <button>
-                    📖 Read Chapter
-                  </button>
+                  <button className="read-chapter-btn">
+
+  📖 Read Chapter
+
+</button>
                 </Link>
 
               </div>

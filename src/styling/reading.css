@@ -794,3 +794,168 @@
     }
 
 }
+.reader {
+
+  min-height:100vh;
+
+  background:#f7f2ea;
+
+  padding:50px 20px;
+
+  transition:.3s;
+
+}
+
+
+
+.reader-container {
+
+  max-width:900px;
+
+  margin:auto;
+
+  background:white;
+
+  padding:50px;
+
+  border-radius:20px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+.reader h1 {
+
+  text-align:center;
+
+  font-size:36px;
+
+}
+
+
+
+.chapter-number {
+
+  text-align:center;
+
+  color:#777;
+
+}
+
+
+
+.chapter-content {
+
+  line-height:2;
+
+  margin-top:40px;
+
+  white-space:pre-wrap;
+
+}
+
+
+
+.reader-tools {
+
+  display:flex;
+
+  justify-content:flex-end;
+
+  gap:10px;
+
+}
+
+
+
+.reader-tools button {
+
+  padding:10px 15px;
+
+  border:none;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+}
+
+
+
+.reading-info {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  margin-top:30px;
+
+  color:#777;
+
+}
+
+
+
+/* Dark mode */
+
+
+.reader.dark {
+
+  background:#111;
+
+}
+
+
+
+.reader.dark .reader-container {
+
+  background:#1e1e1e;
+
+  color:white;
+
+}
+
+
+
+.reader.dark .chapter-number {
+
+  color:#bbb;
+
+}
+.chapter-navigation {
+
+display:flex;
+
+justify-content:space-between;
+
+margin-top:40px;
+
+}
+
+
+.chapter-navigation button {
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:10px;
+
+background:#5b2c83;
+
+color:white;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+
+.chapter-navigation button:hover {
+
+opacity:.85;
+
+}

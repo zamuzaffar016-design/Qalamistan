@@ -1,57 +1,107 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { doc, getDoc } from "firebase/firestore";
+import { 
+  doc, 
+  getDoc, 
+  collection, 
+  query, 
+  where, 
+  getDocs 
+} from "firebase/firestore";
 import { db } from "../firebase/firebase";
+
+import "../styling/reading.css";
+
 
 function ChapterReader() {
 
   const { chapterId } = useParams();
 
   const [chapter, setChapter] = useState(null);
+  const [chapters, setChapters] = useState([]);
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  const [fontSize, setFontSize] = useState(20);
+
 
   useEffect(() => {
 
-    const fetchChapter = async () => {
+  const fetchChapter = async () => {
 
-      try {
+    try {
 
-        const docRef = doc(db, "chapters", chapterId);
+      const chapterRef = doc(db, "chapters", chapterId);
 
-        const docSnap = await getDoc(docRef);
+      const chapterSnap = await getDoc(chapterRef);
 
-        if (docSnap.exists()) {
 
-          setChapter(docSnap.data());
+      if (chapterSnap.exists()) {
 
-        }
+        const currentChapter = chapterSnap.data();
+
+        setChapter(currentChapter);
+
+
+        const q = query(
+          collection(db, "chapters"),
+          where(
+            "storyId",
+            "==",
+            currentChapter.storyId
+          )
+        );
+
+
+        const snapshot = await getDocs(q);
+
+
+        const chapterList = snapshot.docs.map((doc)=>({
+
+          id:doc.id,
+
+          ...doc.data()
+
+        }));
+
+
+        chapterList.sort(
+          (a,b)=>a.chapterNumber-b.chapterNumber
+        );
+
+
+        setChapters(chapterList);
 
       }
 
-      catch (error) {
 
-        console.log(error);
+    }
 
-      }
+    catch(error){
 
-    };
+      console.log(error);
 
-    fetchChapter();
+    }
 
-  }, [chapterId]);
+  };
 
 
-  if (!chapter) {
+  fetchChapter();
+
+
+}, [chapterId]);
+
+
+
+  if(!chapter){
 
     return (
 
-      <h2
-        style={{
-          textAlign: "center",
-          marginTop: "100px"
-        }}
-      >
+      <h2 className="loading">
+
         Loading...
+
       </h2>
 
     );
@@ -59,78 +109,186 @@ function ChapterReader() {
   }
 
 
+
   return (
 
-    <div
-      style={{
-        maxWidth: "900px",
-        margin: "50px auto",
-        background: "white",
-        padding: "50px",
-        borderRadius: "20px",
-        boxShadow: "0 10px 30px rgba(0,0,0,.12)"
-      }}
-    >
+    <div className={darkMode ? "reader dark" : "reader"}>
 
-      <h1
+
+      <div className="reader-container">
+
+
+        <div className="reader-tools">
+
+
+          <button onClick={()=>setFontSize(fontSize + 2)}>
+
+            A+
+
+          </button>
+
+
+          <button onClick={()=>setFontSize(fontSize - 2)}>
+
+            A-
+
+          </button>
+
+
+          <button onClick={()=>setDarkMode(!darkMode)}>
+
+            🌙
+
+          </button>
+
+
+        </div>
+
+
+
+        <h1>
+
+          {chapter.chapterTitle}
+
+        </h1>
+
+
+
+        <p className="chapter-number">
+
+          Chapter {chapter.chapterNumber}
+
+        </p>
+
+
+
+        <hr />
+
+
+
+        <div
+
+        className="chapter-content"
+
         style={{
-          textAlign: "center"
-        }}
-      >
-        {chapter.chapterTitle}
-      </h1>
 
-      <p
-        style={{
-          textAlign: "center",
-          color: "#777",
-          marginBottom: "40px"
-        }}
-      >
-        Chapter {chapter.chapterNumber}
-      </p>
+          fontSize:`${fontSize}px`
 
-      <hr />
-
-      <div
-        style={{
-          marginTop: "40px",
-          lineHeight: "2",
-          fontSize: "20px",
-          whiteSpace: "pre-wrap"
         }}
-      >
-        {chapter.content}
+
+        >
+
+          {chapter.content}
+
+        </div>
+
+
+
+        <hr />
+
+
+<div className="chapter-navigation">
+
+
+{
+
+chapters.findIndex(
+(chapterItem)=>
+chapterItem.id === chapterId
+) > 0 && (
+
+<button
+
+onClick={()=>{
+
+const index =
+chapters.findIndex(
+(chapterItem)=>
+chapterItem.id === chapterId
+);
+
+
+window.location.href =
+`/chapter/${chapters[index-1].id}`;
+
+}}
+
+>
+
+⬅ Previous Chapter
+
+</button>
+
+)
+
+}
+
+
+
+{
+
+chapters.findIndex(
+(chapterItem)=>
+chapterItem.id === chapterId
+) < chapters.length-1 && (
+
+<button
+
+onClick={()=>{
+
+const index =
+chapters.findIndex(
+(chapterItem)=>
+chapterItem.id === chapterId
+);
+
+
+window.location.href =
+`/chapter/${chapters[index+1].id}`;
+
+}}
+
+>
+
+Next Chapter ➡
+
+</button>
+
+)
+
+}
+
+
+</div>
+        <div className="reading-info">
+
+
+          <span>
+
+            Words: {chapter.words}
+
+          </span>
+
+
+          <span>
+
+            Characters: {chapter.characters}
+
+          </span>
+
+
+        </div>
+
+
       </div>
 
-      <hr
-        style={{
-          marginTop: "50px"
-        }}
-      />
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "30px"
-        }}
-      >
-
-        <span>
-          Words: {chapter.words}
-        </span>
-
-        <span>
-          Characters: {chapter.characters}
-        </span>
-
-      </div>
 
     </div>
 
   );
 
+
 }
+
 
 export default ChapterReader;
